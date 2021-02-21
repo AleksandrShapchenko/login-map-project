@@ -1,1 +1,23 @@
-<p>card-page works!</p>
+<div class="card-container">
+    <!-- infinite scroll -->
+    <div
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    >
+        <app-card [post]="post" *ngFor="let post of posts"></app-card>
+    </div>
+    <!-- progress-spinner -->
+    <div>
+        <mat-spinner *ngIf="showSpinner">
+            
+        </mat-spinner>
+    </div>
+     <!-- message posts end -->
+    <div *ngIf="postsEnd">
+        <div >
+            <div class="alert-message">No more posts to show</div>
+        </div>
+    </div>
+</div>
