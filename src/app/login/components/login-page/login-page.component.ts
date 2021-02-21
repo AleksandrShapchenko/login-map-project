@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthGuardService } from 'src/app/auth/services/auth-guard.service';
+import { exampleClientData } from 'src/environments/environment';
 
 
 @Component({
@@ -12,9 +15,10 @@ export class LoginPageComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
 
-  constructor() { }
+  constructor(private authGuard: AuthGuardService, private router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   getEmailErrorMessage() {
@@ -31,4 +35,14 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
+  onSubmit() {
+    if (this.email.value === exampleClientData.email
+       &&
+       this.password.value === exampleClientData.password) {
+         this.authGuard.auth = true;
+         this.router.navigate(['card']);
+       } else {
+         this.authGuard.auth = false;
+       }
+  }
 }

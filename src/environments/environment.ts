@@ -8,6 +8,11 @@ export const environment = {
 
 export const postsUrl = 'https://jsonplaceholder.typicode.com/posts';
 
+export const exampleClientData = {
+  email: 'asd@f.com',
+  password: '12345'
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

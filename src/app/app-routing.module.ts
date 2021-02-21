@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from './auth/services/auth-guard.service';
 import { CardPageComponent } from './card/components/card-page/card-page.component';
 import { LoginPageComponent } from './login/components/login-page/login-page.component';
 import { MapPageComponent } from './map/components/map-page/map-page.component';
@@ -16,11 +17,13 @@ const routes: Routes = [
   },
   {
     path: 'card',
-    component: CardPageComponent
+    component: CardPageComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'map',
-    component: MapPageComponent
+    component: MapPageComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 

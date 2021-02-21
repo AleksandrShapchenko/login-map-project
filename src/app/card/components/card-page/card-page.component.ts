@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { StoreService } from 'src/app/shared/store.service';
+import { StoreService } from 'src/app/shared/services/store.service';
 import { postsUrl } from 'src/environments/environment';
 
 @Component({
