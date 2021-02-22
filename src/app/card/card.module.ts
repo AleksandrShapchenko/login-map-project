@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { CardRoutingModule } from './card-routing.module';
 
 @NgModule({
   declarations: [CardPageComponent, CardComponent],
@@ -16,7 +17,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     HttpClientModule,
     FlexLayoutModule,
     MatProgressSpinnerModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    CardRoutingModule
   ],
   exports: [CardPageComponent]
 })

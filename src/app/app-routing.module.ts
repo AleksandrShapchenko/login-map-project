@@ -13,18 +13,15 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginPageComponent
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'card',
-    component: CardPageComponent,
-    canActivate: [AuthGuardService]
+    loadChildren: () => import('./card/card.module').then(m => m.CardModule),
   },
   {
     path: 'map',
-    // loadChildren: () => import('./map/map.module').then(m => m.MapModule)
-    component: MapPageComponent,
-    canActivate: [AuthGuardService]
+    loadChildren: () => import('./map/map.module').then(m => m.MapModule),
   }
 ];
 
