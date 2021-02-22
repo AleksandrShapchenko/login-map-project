@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapModule } from './map/map.module';
 import { CardModule } from './card/card.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CardModule,
     MatToolbarModule,
     FlexLayoutModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

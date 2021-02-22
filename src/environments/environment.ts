@@ -9,8 +9,8 @@ export const environment = {
 export const postsUrl = 'https://jsonplaceholder.typicode.com/posts';
 
 export const exampleClientData = {
-  email: 'asd@f.com',
-  password: '12345'
+  email: 'asd@f',
+  password: '123'
 }
 
 /*

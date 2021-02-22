@@ -40,9 +40,9 @@ export class LoginPageComponent implements OnInit {
        &&
        this.password.value === exampleClientData.password) {
          this.authGuard.auth = true;
-         this.router.navigate(['card']);
+         this.router.navigate(['map']);
        } else {
-         this.authGuard.auth = false;
+        //  this.authGuard.auth = false;
        }
   }
 }
