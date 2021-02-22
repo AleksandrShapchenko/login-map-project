@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import * as L from 'leaflet';
+import { MarkerService } from '../../services/marker.service';
 
 @Component({
   selector: 'app-map-page',
@@ -9,10 +10,11 @@ import * as L from 'leaflet';
 export class MapPageComponent implements AfterViewInit {
   private map;
 
-  constructor() { }
+  constructor(private markerService: MarkerService) { }
 
   ngAfterViewInit() {
     this.initMap();
+    this.markerService.makeMarkers(this.map)
   }
 
   private initMap(): void {
@@ -21,8 +23,6 @@ export class MapPageComponent implements AfterViewInit {
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    });
-
-    tiles.addTo(this.map);
+    }).addTo(this.map);
   }
 }

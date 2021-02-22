@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/app/shared/services/store.service';
-import { postsUrl } from 'src/environments/environment';
+import { baseUrl } from 'src/environments/environment';
 
 @Component({
   selector: 'app-card-page',
@@ -9,6 +9,7 @@ import { postsUrl } from 'src/environments/environment';
   styleUrls: ['./card-page.component.scss']
 })
 export class CardPageComponent implements OnInit {
+  postsUrl: string = `${baseUrl}posts`
   posts: any[];
   postsNumberToAdd: number = 20;
   postsStep: number = 1;
@@ -24,7 +25,7 @@ export class CardPageComponent implements OnInit {
 
   loadInitPosts() {
     this.showSpinner = true;
-    this.http.get(postsUrl)
+    this.http.get(this.postsUrl)
       .subscribe(posts => {
         if (this.store.getFirstLoadStatus()) {
           this.store.addPosts(posts);

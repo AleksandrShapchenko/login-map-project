@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 };
 
-export const postsUrl = 'https://jsonplaceholder.typicode.com/posts';
+export const baseUrl: string = 'http://localhost:3000/';
 
 export const exampleClientData = {
   email: 'asd@f',
