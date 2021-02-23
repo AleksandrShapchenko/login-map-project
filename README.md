@@ -1,5 +1,9 @@
 # LoginMapProject
 
+Для запуска проекта необходимо иметь Angular cli и json-server.
+1. В cli в корне проекта прописать команду json-server --watch data.json.
+2. В cli в корне проекта прописать команду ng serve -o.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
 ## Development server
